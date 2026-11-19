@@ -63,7 +63,7 @@ awgsplit соединяет одно с другим. Туннель AmneziaWG �
 
 | Что | Комментарий |
 |---|---|
-| Роутер с **OpenWrt 25.12 или новее** | нужен менеджер пакетов `apk`. Проверено на Xiaomi AX3000T (mediatek/filogic) |
+| Роутер с **OpenWrt 25.12 или новее** | нужен менеджер пакетов `apk`. Проверено на Xiaomi AX3000T (mediatek/filogic), Kroks kndrt41r1 (MediaTek MT7621) |
 | Сервер **AmneziaWG** и клиентский `.conf` для роутера | например, свой сервер через приложение AmneziaVPN. Каждому роутеру — свой профиль |
 | Интернет на роутере во время установки | ставятся `dnsmasq-full`, AmneziaWG и списки |
 | Около 3 МБ свободного места | плюс пакеты AmneziaWG и dnsmasq-full |
@@ -79,7 +79,7 @@ AmneziaWG установщик ставит сам из фида [2Grey/awg-open
 Зайдите на роутер по SSH (`ssh root@192.168.1.1`) и выполните:
 
 ```sh
-wget -O /tmp/awgsplit-online.sh https://raw.githubusercontent.com/XYZ-WEB3/awgsplit/main/install-online.sh && sh /tmp/awgsplit-online.sh
+wget -O /tmp/awgsplit-online.sh https://github.com/cbytl/awgsplit/blob/main/install.sh && sh /tmp/awgsplit-online.sh
 ```
 
 Скрипт скачает awgsplit с GitHub и запустит установщик.
