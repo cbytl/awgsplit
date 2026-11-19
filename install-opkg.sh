@@ -62,6 +62,7 @@ else
 	warn "Попробуйте вручную: opkg update && opkg install wget-ssl"
 fi
 
+
 # ---------------------------------------------------------------- Podkop
 PODKOP=0
 if [ -x /etc/init.d/podkop ] && /etc/init.d/podkop enabled 2>/dev/null; then PODKOP=1; fi
