@@ -71,8 +71,13 @@ if [ "$NODEPS" = 0 ]; then
 		# копия старого dnsmasq для отката — ДО удаления (opkg download кладёт .ipk в текущий каталог)
 		( cd "$RB" && opkg download dnsmasq >/dev/null 2>&1 ) || warn "Не смог сохранить копию dnsmasq для отката"
 		# dnsmasq-full конфликтует с dnsmasq, поэтому сносим старый и ставим новый
+		# на время замены DNS у роутера нет — подменяем резолвер на внешний
+		cp /etc/resolv.conf "$BK/resolv.conf"
+		echo "nameserver 8.8.8.8" > /etc/resolv.conf
 		opkg remove dnsmasq > "$RB/log" 2>&1
 		opkg install dnsmasq-full >> "$RB/log" 2>&1
+		# восстанавливаем — dnsmasq-full подхватит свои настройки
+		cp "$BK/resolv.conf" /etc/resolv.conf
 		tail -5 "$RB/log"
 		if pkg_installed dnsmasq-full && has_nftset; then
 			cp "$BK/dhcp" /etc/config/dhcp
