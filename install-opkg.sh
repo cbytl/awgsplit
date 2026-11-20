@@ -51,17 +51,6 @@ ask_yn() {
 	done
 }
 
-# ---------------------------------------------------------------- wget-ssl
-step "wget-ssl"
-if pkg_installed wget-ssl; then
-	ok "wget-ssl уже установлен"
-elif opkg update >/dev/null 2>&1 && opkg install wget-ssl >/dev/null 2>&1; then
-	ok "wget-ssl установлен"
-else
-	warn "Не смог поставить wget-ssl — HTTPS-загрузки могут не сработать"
-	warn "Попробуйте вручную: opkg update && opkg install wget-ssl"
-fi
-
 
 # ---------------------------------------------------------------- Podkop
 PODKOP=0
