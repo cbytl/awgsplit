@@ -310,3 +310,7 @@ firewall-зона `awgsplit` остаются — удалите их в LuCI, �
 ## Лицензия
 
 [MIT](LICENSE)
+
+Оригинальный проект — [awgsplit](https://github.com/XYZ-WEB3/awgsplit) от XYZ-WEB3.
+Мои изменения (установщик под opkg, правки ask_yn) — под той же MIT, авторы перечислены в LICENSE.
+
