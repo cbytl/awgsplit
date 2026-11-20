@@ -53,6 +53,8 @@ if [ -f /lib/netifd/proto/amneziawg.sh ]; then
 	PROTO=amneziawg; PFX=awg_; H=/lib/netifd/proto/amneziawg.sh
 elif [ -f /lib/netifd/proto/amneziawg3.sh ]; then
 	PROTO=amneziawg3; PFX=; H=/lib/netifd/proto/amneziawg3.sh
+elif [ -f /lib/netifd/proto/wireguard.sh ]; then
+	PROTO=wireguard; PFX=; H=/lib/netifd/proto/wireguard.sh	
 else
 	echo "ОШИБКА: AmneziaWG не установлен. Поставь пакеты (нужен интернет на роутере):"
 	echo "  . /etc/openwrt_release; mkdir -p /etc/apk/keys"
